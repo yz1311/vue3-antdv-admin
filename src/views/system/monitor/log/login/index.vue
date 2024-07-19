@@ -62,7 +62,7 @@
           if (startDate && endDate) {
             return [
               dayjs(startDate).startOf('day').format('YYYY-MM-DD HH:mm:ss'),
-              dayjs(startDate).endOf('day').format('YYYY-MM-DD HH:mm:ss'),
+              dayjs(endDate).endOf('day').format('YYYY-MM-DD HH:mm:ss'),
             ];
           }
         },
