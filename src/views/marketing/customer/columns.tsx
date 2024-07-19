@@ -1,4 +1,4 @@
-import moment from 'dayjs';
+import dayjs from 'dayjs';
 import { Tag } from 'ant-design-vue';
 import type { TableColumn } from '@/components/core/dynamic-table';
 import { formatToDateTime } from '@/utils/dateUtil';
@@ -9,7 +9,7 @@ export type TableColumnItem = TableColumn<TableListItem>;
 export const baseColumns: TableColumnItem[] = [
   {
     title: '顾客姓名',
-    width: 200,
+    width: 180,
     dataIndex: 'name',
   },
   {
@@ -56,7 +56,7 @@ export const baseColumns: TableColumnItem[] = [
       },
     },
     customRender: ({ record }) => {
-      return moment(Number(record.accessDate + '000')).format('YYYY-MM-DD HH:mm:ss');
+      return dayjs(Number(record.accessDate + '000')).format('YYYY-MM-DD HH:mm:ss');
     },
   },
   {
@@ -120,7 +120,7 @@ export const baseColumns: TableColumnItem[] = [
     dataIndex: 'updatedAt',
     hideInSearch: true,
     customRender: ({ record }) => {
-      return formatToDateTime(record.createdAt);
+      return formatToDateTime(record.updatedAt);
     },
   },
 ];

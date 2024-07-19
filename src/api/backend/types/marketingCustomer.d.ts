@@ -13,7 +13,7 @@ declare namespace API {
     status: 0 | 1;
     /** 关联菜单、权限编号 */
     menuIds?: number[];
-  };
+  } & BaseEntity;
 
   type CustomerItemInfo = {
     name: string;
